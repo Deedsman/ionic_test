@@ -1,0 +1,129 @@
+.item{
+    padding: 0 16px;
+}
+.item__title{
+  text-align: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1D201F;
+  margin-top: 80px;
+  margin-bottom: 16px;
+}
+.item__description{
+  padding:0 29px ;
+}
+.item__text-container{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+.item__text{
+  font-family: "Montserrat";
+   font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #5B5B5B;
+    margin-bottom: 8px;
+}
+.item__date-nav{
+    margin-bottom: 16px;
+}
+.item__date{
+display: block;
+margin-top: 20px;
+}
+.date-title{
+margin-top: 25px;
+}
+.item__date-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item__calendar-icon{
+  margin-left: 8px;
+}
+.item__day-container{
+    background: #FFFFFF;
+    border: 1px solid #EDEFF2;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    width: 86px;
+    height: 92px;
+}
+.item__day-container.active{
+  background: #F0FBFF;
+  border: 1px solid #33BDE4;
+  color: #33BDE4;
+}
+
+
+.item__day-name{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+.item__time{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #C1C1C1;
+}
+.item__time.active{
+  color: #33BDE4;
+}
+
+.write__container{
+    background: #FFFFFF;
+    border: 1px solid #EDEFF2;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 24px 12px;
+    text-align: center;
+}
+.write__description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.write__item:first-child{border-right:1px solid #E6E6E6;
+}
+.write__item{
+  flex: 1;
+  text-align: center;
+}
+.item__logout{
+  position: absolute;
+  top: 25px;
+  color: #399bff;
+  z-index: 1;
+}
+.item__header-name{
+  position: absolute;
+  top: 25px;
+  right: 16px;
+  z-index: 1;
+  color: #979797;
+}
+@media(max-width:414px){
+  .write__btn{
+    font-size: 3.5vw;
+  }
+}
