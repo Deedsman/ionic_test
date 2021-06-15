@@ -19,7 +19,6 @@ export const add_new_write: any = createAction('ADD_NEW_WRITE');
 
 export default createReducer(initialState, {
     [set_user_state]: function (state, action: any) {
-        //debugger;
         state.user = { username: action.payload.split('@')[0] }
     },
     [get_specialist_state]: function (state, action: any) {

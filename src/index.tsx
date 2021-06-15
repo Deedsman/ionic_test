@@ -6,8 +6,8 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { store } from './toolkitRedux';
 
-//const store = createStore(reducer);
 
+//import store and provider
 
 ReactDOM.render(
   <Provider store={store}>

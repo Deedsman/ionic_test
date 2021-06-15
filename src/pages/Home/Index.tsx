@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { IonContent, IonHeader, IonPage, IonItem, IonButton, IonTitle, IonToolbar, IonInput } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
+import React from 'react'
+import { IonContent, IonPage, IonButton } from '@ionic/react';
 import './styles.css';
 
+//component home page
+
 const Home: React.FC = () => {
-  // const [text, setText] = useState<string>();
+
   return (
     <IonPage>
       <IonContent fullscreen>

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { IonContent, IonGrid, IonHeader, IonButtons, IonBackButton, IonPage, IonTitle, IonInput, IonItem, IonToolbar, IonList, IonButton } from '@ionic/react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import React, { useState } from 'react'
+import { IonContent, IonHeader, IonButtons, IonBackButton, IonPage, IonTitle, IonInput, IonItem, IonToolbar, IonList, IonButton } from '@ionic/react';
+import { Link, useHistory } from 'react-router-dom';
 import './styles.css';
 import { loginUser } from '../../firebaseConfig'
 import { toast } from '../../toast';
@@ -8,7 +8,11 @@ import { useDispatch } from 'react-redux';
 import { set_user_state, add_new_write } from '../../toolkitRedux/toolkitReducer'
 import { getCurrentUser } from '../../firebaseConfig';
 
+//login component
+
 const Login: React.FC = () => {
+
+  //useState for set username and password
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const history = useHistory();
@@ -20,24 +24,17 @@ const Login: React.FC = () => {
     const res: any = await loginUser(username, password);
 
     if (res) {
-
-      //dispatch(set_user_state(res.user.email))
-      // history.replace('/item')
-      // toast('You have logged in');
+      //get User when login
       getCurrentUser().then((user: any) => {
         if (user) {
           dispatch(set_user_state(user.user.email))
           dispatch(add_new_write(user.userData.data()))
-          //window.history.replaceState({}, '', '/item')
           history.replace('/item')
           toast('You have logged in');
-          console.log('запрос выполнен')
-          //debugger;
         } else {
-          window.history.replaceState({}, '', '/login')
-          console.log("I have not login")
+          history.replace('/login')
+          toast("I not login");
         }
-        //setSpinner(false)
       })
     }
   }

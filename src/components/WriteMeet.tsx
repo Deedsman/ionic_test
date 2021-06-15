@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { IonSlides, IonSlide, IonContent, IonDatetime, IonButton } from '@ionic/react';
+import React from 'react';
+import { IonButton } from '@ionic/react';
 import { useSelector } from 'react-redux';
+
+//importing some props
 
 type dayProps = {
     days: any[]
@@ -8,16 +10,13 @@ type dayProps = {
     addDateTime(action: any): void
 }
 
+// component for add current date for meet
 
 const WriteMeet: React.FC<dayProps> = ({ days, time, addDateTime }) => {
-    // console.log(days)
-    //debugger;
+
+    //import data from useSelector from store
+
     const data: any = useSelector((state: any) => state.toolkit.specialist[0].current_write_time);
-    if (data) {
-        console.log("have data   " + data.new_time);
-        //     console.log("this is day" + data.new_day[0].number)
-        //     console.log("this is time" + data.new_time)
-    }
 
     return (
         <div className="write__container">

@@ -8,8 +8,10 @@ import { registerUser } from '../../firebaseConfig'
 import { useDispatch } from 'react-redux';
 import { set_user_state } from '../../toolkitRedux/toolkitReducer'
 
+
+//component register and set on firebase ,and set in store
 const Register: React.FC = () => {
-  const [text, setText] = useState<string>();
+
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const dispatch = useDispatch()
@@ -21,6 +23,7 @@ const Register: React.FC = () => {
     }
 
     const res = await registerUser(username, password)
+
 
     if (res) {
       history.replace('/item')

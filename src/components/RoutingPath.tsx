@@ -8,7 +8,7 @@ import Register from '../pages/Register/Register';
 import Item from '../pages/Item/Item';
 
 
-
+//component for routing
 
 const RoutingPath: React.FC = () => {
     return (

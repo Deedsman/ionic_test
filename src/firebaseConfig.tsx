@@ -12,23 +12,19 @@ const config = {
 }
 firebase.initializeApp(config);
 
-
-type Settings = {
-    timestampsInSnapshots: boolean
-}
 interface User {
     day: any;
     time: string;
 }
-//db.settings({ timestampsInSnapshots: true }:<Settings>);
 
+// Get User and collection doc
 
 export function getCurrentUser() {
     return new Promise((resolve, reject) => {
         const unsubscribe = firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
                 console.log("user is login");
-                //debugger;
+
                 await firebase.firestore().collection('users').doc(user.uid).get().then(doc => {
                     let userData: any = doc
                     resolve({ user, userData })
@@ -43,6 +39,8 @@ export function getCurrentUser() {
     })
 
 }
+
+// set and collection doc current user
 
 export function addData(day: any, time: string) {
 
@@ -60,16 +58,19 @@ export function addData(day: any, time: string) {
 
 }
 
+//logout auth
+
 export function logoutUser() {
     return firebase.auth().signOut();
 }
+
+//Login auth
 
 export async function loginUser(username: string, password: string) {
     const email = `${username}@test.com`
 
     try {
         const res = await firebase.auth().signInWithEmailAndPassword(email, password);
-        console.log("2 res" + res)
         return res;
 
     } catch (error) {
@@ -79,6 +80,8 @@ export async function loginUser(username: string, password: string) {
 
 
 }
+
+//Login register user and add some data
 
 export async function registerUser(username: string, password: string) {
     const email = `${username}@test.com`

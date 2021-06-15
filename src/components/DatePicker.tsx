@@ -21,15 +21,19 @@ const slideTime = {
   spaceBetween: 25,
 };
 
+//component have 2 sliders
 
 
 export const DataPicker: React.FC<AddDay> = (props) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeTime, setActiveTime] = useState(0)
+
+  //add Active class and set day
   const addDay = (arrDays: Array<any> = [], index: number) => {
     setActiveIndex(index);
     props.setDay(arrDays);
   }
+  //add Active class and set time
   const setTime = (time: string, index: number) => {
     setActiveTime(index)
     props.addTime(time);
